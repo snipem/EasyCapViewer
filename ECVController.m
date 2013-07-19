@@ -138,12 +138,6 @@ static void ECVDeviceAdded(Class deviceClass, io_iterator_t iterator)
 	}
 	ECVLog(ECVNotice, @"USB Devices: %@", ECVUSBDevices());
 	if([devices count]) return [devices makeObjectsPerformSelector:@selector(ECV_display)];
-	NSAlert *const alert = [[[NSAlert alloc] init] autorelease];
-	[alert setMessageText:NSLocalizedString(@"No supported capture hardware was found.", nil)];
-	[alert setInformativeText:NSLocalizedString(@"Please connect an EasyCap DC60 to your computer. Please note that the DC60+ is not supported.", nil)];
-	[alert addButtonWithTitle:NSLocalizedString(@"OK", nil)];
-	[alert addButtonWithTitle:NSLocalizedString(@"Show Error Log", nil)];
-	if(NSAlertSecondButtonReturn == [alert runModal]) [[ECVErrorLogController sharedErrorLogController] showWindow:nil];
 }
 
 #pragma mark -ECVController(Private)

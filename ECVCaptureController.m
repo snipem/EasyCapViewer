@@ -389,7 +389,7 @@ static NSString *const ECVCropBorderKey = @"ECVCropBorder";
 		[NSNumber numberWithBool:YES], ECVVsyncKey,
 		[NSNumber numberWithInteger:GL_LINEAR], ECVMagFilterKey,
 		[NSNumber numberWithBool:NO], ECVShowDroppedFramesKey,
-		NSFileTypeForHFSTypeCode(kJPEGCodecType), ECVVideoCodecKey,
+		//NSFileTypeForHFSTypeCode(kJPEGCodecType), ECVVideoCodecKey,
 		[NSNumber numberWithDouble:0.5f], ECVVideoQualityKey,
 		NSStringFromRect(ECVUncroppedRect), ECVCropRectKey,
 		[NSNumber numberWithInteger:ECVAspectRatioUnknown], ECVCropSourceAspectRatioKey,
@@ -452,13 +452,13 @@ static NSString *const ECVCropBorderKey = @"ECVCropBorder";
 {
 	[videoView pushFrame:frame];
 	if(_movieRecorder) @synchronized(self) {
-		[_movieRecorder addVideoFrame:frame];
+		//[_movieRecorder addVideoFrame:frame];
 	}
 }
 - (void)pushAudioBufferListValue:(NSValue *const)bufferListValue
 {
 	if(_movieRecorder) @synchronized(self) {
-		[_movieRecorder addAudioBufferList:[bufferListValue pointerValue]];
+		//[_movieRecorder addAudioBufferList:[bufferListValue pointerValue]];
 	}
 }
 
